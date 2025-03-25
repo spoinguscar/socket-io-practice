@@ -5,6 +5,7 @@ const form = document.getElementById("form");
 
 form.addEventListener("submit", e => {
     e.preventDefault();
+    console.log("Form Submitted.");
     const message = messageInput.value;
     const room = roomInput.value;
 
