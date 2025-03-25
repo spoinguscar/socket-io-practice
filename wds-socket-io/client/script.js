@@ -14,7 +14,6 @@ socket.on('receive-message', message => {
     displayMessage(message);
 })
 
-// socket.emit('custom-event', 10, 'Hi', {a: 'a'});
 
 form.addEventListener("submit", e => {
     e.preventDefault();
