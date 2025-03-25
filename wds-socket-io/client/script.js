@@ -49,7 +49,8 @@ function displayMessage(message) {
 
 let count = 0;
 setInterval(() => {
-    socket.emit('ping', ++count)
+    // socket.emit('ping', ++count) // Send unsent pings all at once
+    socket.volatile.emit('ping', ++count) // Drops pings 
 }, 1000)
 
 document.addEventListener("keydown", e => {
