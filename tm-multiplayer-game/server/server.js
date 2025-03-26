@@ -17,7 +17,8 @@ io.on("connection", (client) => {
 
   function handleJoinGame(gameCode) {
     const room = io.sockets.adapter.rooms.get(gameCode);
-    console.log(room);
+    console.log(room, clientRooms);
+    client.emit("gameCode", gameCode);
 
     // let allUsers;
     // if (room) {
@@ -30,7 +31,7 @@ io.on("connection", (client) => {
     // }
 
     if (numClients === 0) {
-      console.log(allUsers, room, gameCode);
+      console.log(room, gameCode);
       client.emit("unknownGame");
       return;
     } else if (numClients > 1) {

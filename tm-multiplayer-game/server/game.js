@@ -32,7 +32,7 @@ function createGameState() {
       },
       {
         pos: {
-          x: 18,
+          x: 17,
           y: 10,
         },
         vel: {
@@ -40,9 +40,9 @@ function createGameState() {
           y: 0,
         },
         snake: [
-          { x: 20, y: 10 },
           { x: 19, y: 10 },
           { x: 18, y: 10 },
+          { x: 17, y: 10 },
         ],
       },
     ],
@@ -64,6 +64,9 @@ function gameLoop(state) {
 
   playerOne.pos.x += playerOne.vel.x;
   playerOne.pos.y += playerOne.vel.y;
+
+  playerTwo.pos.x += playerTwo.vel.x;
+  playerTwo.pos.y += playerTwo.vel.y;
 
   if (
     playerOne.pos.x < 0 ||
